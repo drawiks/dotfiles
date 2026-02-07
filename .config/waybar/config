@@ -1,0 +1,99 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["wlr/taskbar", "hyprland/window"],
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock", "custom/notification", "custom/power"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "●",
+            "default": "○"
+        }
+    },
+
+    "wlr/taskbar": {
+         "format": "{icon}",
+         "icon-size": 18,
+         "tooltip-format": "{title}",
+         "on-click": "activate",
+         "on-click-middle": "close",
+         "ignore-list": [
+            "Alacritty",
+            "kitty"
+         ],
+         "app_ids-mapping": {
+             "firefox-esr": "firefox"
+         }
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "player-icons": {
+            "default": "▶",
+            "spotify": "",
+            "firefox": ""
+        },
+        "status-icons": {
+            "paused": "󰏤"
+        },
+        "max-length": 20
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "on-click": "wlogout -C ~/.config/wlogout/style.css -l ~/.config/wlogout/layout",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-ethernet": "󰈀",
+        "format-wifi": " ",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50
+    },
+
+    "clock": {
+        "format": "{:%H:%M %p}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": ["", "󰕾"]
+    },  
+
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    }
+}
